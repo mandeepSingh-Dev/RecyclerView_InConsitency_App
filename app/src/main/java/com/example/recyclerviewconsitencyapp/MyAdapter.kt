@@ -19,6 +19,13 @@ class MyAdapter : ListAdapter<Item, MyAdapter.MyViewHolder>(DiffUtils) {
 
         fun bind(item : Item){
 
+            binding.root.scaleX = 0.6f
+            binding.root.scaleY = 0.6f
+            binding.root.alpha = 0.7f
+            binding.root.translationX = -200f
+
+            binding.root.animate().scaleX(1f).scaleY(1f).alpha(1f).translationX(0f).duration = 300
+
 
             textWatcher1?.let { binding.editText.removeTextChangedListener(textWatcher1) }
             textWatcher2?.let { binding.editText2.removeTextChangedListener(textWatcher2) }
